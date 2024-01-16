@@ -1,0 +1,17 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  color: #eee;
+}
+
+.main-cover-page {
+  background: linear-gradient(to right, rgba(0,0,0,.8), rgba(0,0,0,.3)), url("../../config/img/gym.jpg") center no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+// @media screen and (max-width: 320px) {
+//   .main-cover-page {
+//     height: 150vh;
+//   }
+// }
