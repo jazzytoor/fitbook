@@ -1,38 +1,51 @@
-# FitBook
+<h1 align="center">Welcome to FitBook 👋</h1>
 
-fb-ui is the front end microservice for FitBook
+## ✨ Overview
 
-## Prerequisites
+Within this repository it contains the React code for [fitbook](https://fitbook.jazzytoor.com)
 
-You will need the following installed on your machine:
-- Node & Npm
+## Locally
 
-I would recommend using [NVM](https://github.com/nvm-sh/nvm) 
+- 🚀 Prerequisites
+    1. Node
+    2. Npm
+
+- 🚀 Commands
+    1. `sam build -t infrastructure/sam/template.yaml --use-container`
+    2. `sam local start-api`
 
 ## Usage
 
-**Step 1**
-```bash
-npm install 
-```
+- ✨ Steps
+    
+    1. 
 
-**Step 2**
+    ```bash
+    npm install 
+    ```
 
-The config for Firebase is using environment variables, do the following locally:
+    2. 
 
-Create `.env` file in the root level
+    The config for Firebase is using environment variables, do the following locally:
 
-Store the following in the `.env` file
-```bash
-REACT_APP_API_KEY=ENTER_KEY
-REACT_APP_API_URL=ENTER_URL
-REACT_APP_DB_URL=ENTER_DB_URL
-```
+    Create `.env` file in the root level
 
-**Step 3**
-```bash
-npm start
-```
+    Store the following in the `.env` file
+    ```bash
+    REACT_APP_API_KEY=ENTER_KEY
+    REACT_APP_API_URL=ENTER_URL
+    REACT_APP_DB_URL=ENTER_DB_URL
+    ```
 
-## Developed By
-[Jazz Toor]()
+    3. 
+    ```bash
+    npm start
+    ```
+
+## Coming Soon
+- ❗️ CI/CD for GitHub and Azure DevOps
+- ❗️ Hosted within EKS
+
+## Author
+
+👤 **Jazz**

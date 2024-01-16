@@ -1,0 +1,44 @@
+trigger:
+- dev
+- main
+
+pool:
+  vmImage: ubuntu-18.04
+
+steps:
+  - checkout: self
+    clean: true
+    persistCredentials: true
+
+  - task: Bash@3
+    displayName: Configure Environment
+    inputs:
+      targetType: inline
+      script: |
+        echo "REACT_APP_API_KEY=$API_KEY" >> .env
+        echo "REACT_APP_API_URL=$API_URL" >> .env
+        echo "REACT_APP_DB_URL=$DB_URL" >> .env
+        echo "REACT_APP_ENABLE_SITE=$ENABLE_SITE" >> .env
+        cat .env
+
+  - bash: npm install
+    displayName: Npm Install
+
+  - task: Npm@1
+    displayName: Npm Build
+    inputs:
+      command: custom
+      verbose: false
+      customCommand: run build
+
+  - task: PublishBuildArtifacts@1
+    displayName: Publish Artifact Build
+    inputs:
+      PathtoPublish: build
+      ArtifactName: build
+
+  - task: PublishBuildArtifacts@1
+    displayName: Publish Artifact Infrastructure
+    inputs:
+      PathtoPublish: infrastructure
+      ArtifactName: infrastructure
